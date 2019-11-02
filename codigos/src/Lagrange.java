@@ -8,10 +8,38 @@ public class Lagrange {
         double[] valoresDeL = retornarResultadoL(x, valoresDoX);
         double resultado = 0.0;
 
+        imprimirLista(valoresDoX, "VALORES_X");
+        imprimirLista(valoresDaFuncao, "VALORES_FUNCAO");
+
         for (int i = 0; i < valoresDeL.length; i++) {
             resultado += (valoresDeL[i] * valoresDaFuncao[i]);
         }
         System.out.println("Resultado: " + resultado);
+    }
+
+    private void imprimirLista(double[] lista, String nomeDaLista) {
+        for (int i = 0; i < lista.length; i++) {
+            if (i == 0 && nomeDaLista.toUpperCase().equals("VALORES_X")) {
+                for (int j = 0; j < lista.length; j++) {
+                    if (j == 0) {
+                        System.out.printf("%27d | ", j);
+                    }
+                    if (j >= 1) {
+                        System.out.printf("%12d | ", j);
+                    }
+                }
+                System.out.println();
+            }
+
+            if (i == 0 && nomeDaLista.toUpperCase().equals("VALORES_X")) {
+                System.out.printf("%12s | ", "X");
+            }
+            if (i == 0 && nomeDaLista.toUpperCase().equals("VALORES_FUNCAO")) {
+                System.out.printf("%12s | ", "F(x)");
+            }
+            System.out.printf("%12f | ", lista[i]);
+        }
+        System.out.println();
     }
 
     public void interpolarPontos2(double x, double numero0, double numero1, double numero2) {
