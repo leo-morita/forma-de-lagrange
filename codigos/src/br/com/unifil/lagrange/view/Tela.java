@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package método.de.lagrange;
+package br.com.unifil.lagrange.view;
 
 public class Tela extends javax.swing.JFrame {
 
