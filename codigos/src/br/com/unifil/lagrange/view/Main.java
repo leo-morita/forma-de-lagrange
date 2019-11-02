@@ -1,3 +1,7 @@
+package br.com.unifil.lagrange.view;
+
+import br.com.unifil.lagrange.controller.Lagrange;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

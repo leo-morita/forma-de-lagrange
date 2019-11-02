@@ -1,3 +1,5 @@
+package br.com.unifil.lagrange.controller;
+
 public class Lagrange {
 
     public void interpolarPontos(double x, Double[] numeros) {
