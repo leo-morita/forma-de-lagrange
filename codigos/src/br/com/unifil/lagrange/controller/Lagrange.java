@@ -2,21 +2,31 @@ package br.com.unifil.lagrange.controller;
 
 public class Lagrange {
 
+    private double resultado = 0.0;
+    private double[] valoresDaFuncao;
+
     public void interpolarPontos(double x, Double[] numeros) {
         double[] valoresDoX = new double[numeros.length];
         adicionarElementosNoArray(valoresDoX, numeros);
-        double[] valoresDaFuncao = calcularFuncaoDoValorX(valoresDoX);
+        valoresDaFuncao = calcularFuncaoDoValorX(valoresDoX);
 
         double[] valoresDeL = retornarResultadoL(x, valoresDoX);
-        double resultado = 0.0;
-
         imprimirLista(valoresDoX, "VALORES_X");
         imprimirLista(valoresDaFuncao, "VALORES_FUNCAO");
 
         for (int i = 0; i < valoresDeL.length; i++) {
             resultado += (valoresDeL[i] * valoresDaFuncao[i]);
         }
-        System.out.println("Resultado: " + resultado);
+        System.out.println("Resultado: " + getResultado());
+    }
+
+
+    public double getResultado() {
+        return resultado;
+    }
+
+    public double[] getValoresDaFuncao() {
+        return valoresDaFuncao;
     }
 
     private void imprimirLista(double[] lista, String nomeDaLista) {
