@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="projeto-forma-de-lagrange:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/projeto_forma_de_lagrange_jar</output-path>
+    <root id="archive" name="projeto-forma-de-lagrange.jar">
+      <element id="module-output" name="projeto-forma-de-lagrange" />
+    </root>
+  </artifact>
+</component>
