@@ -7,8 +7,6 @@ package br.com.unifil.lagrange.view;
 
 import br.com.unifil.lagrange.controller.Lagrange;
 
-import java.util.Locale;
-
 public class Tela extends javax.swing.JFrame {
 
     /**
@@ -170,6 +168,8 @@ public class Tela extends javax.swing.JFrame {
                 String resultado = String.format("%.4f", aux[i]);
                 Tabela.setValueAt(resultado,1,i);
             }
+            l = new Lagrange();
+            x = 0;
         }else{
             Resultado.setText("não preenchido");
         }
