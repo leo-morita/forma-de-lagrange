@@ -20,7 +20,35 @@ public class Lagrange {
         //System.out.println("Resultado: " + getResultado());
     }
 
+    private double[] calcularFuncaoDoValorX(double... valores) {
+        double e = Math.E;
+        double[] resultadoDaFuncao = new double[valores.length];
+        for (int i = 0; i < valores.length; i++) {
+            resultadoDaFuncao[i] = Math.pow(e, (2 * valores[i]));
+        }
+        return resultadoDaFuncao;
+    }
 
+    private void adicionarElementosNoArray(double[] arrayACarregar, Double[] arrayCarregado) {
+        for (int i = 0; i < arrayCarregado.length; i++) {
+            arrayACarregar[i] = arrayCarregado[i];
+        }
+    }
+
+    private double[] retornarResultadoL(double x, double... numeros) {
+        double[] array = new double[numeros.length];
+        for (int i = 0; i < numeros.length; i++) {
+            double L = 1.0;
+            for (int j = 0; j < numeros.length; j++) {
+                if (i != j) {
+                    L *= ((x - numeros[j]) / (numeros[i] - numeros[j]));
+                }
+            }
+            array[i] = L;
+        }
+        return array;
+    }
+    
     public double getResultado() {
         return resultado;
     }
@@ -53,33 +81,5 @@ public class Lagrange {
         }
         System.out.println();
     }
-
-    private double[] calcularFuncaoDoValorX(double... valores) {
-        double e = Math.E;
-        double[] resultadoDaFuncao = new double[valores.length];
-        for (int i = 0; i < valores.length; i++) {
-            resultadoDaFuncao[i] = Math.pow(e, (2 * valores[i]));
-        }
-        return resultadoDaFuncao;
-    }
-
-    private void adicionarElementosNoArray(double[] arrayACarregar, Double[] arrayCarregado) {
-        for (int i = 0; i < arrayCarregado.length; i++) {
-            arrayACarregar[i] = arrayCarregado[i];
-        }
-    }
-
-    private double[] retornarResultadoL(double x, double... numeros) {
-        double[] array = new double[numeros.length];
-        for (int i = 0; i < numeros.length; i++) {
-            double L = 1.0;
-            for (int j = 0; j < numeros.length; j++) {
-                if (i != j) {
-                    L *= ((x - numeros[j]) / (numeros[i] - numeros[j]));
-                }
-            }
-            array[i] = L;
-        }
-        return array;
-    }
+    
 }
