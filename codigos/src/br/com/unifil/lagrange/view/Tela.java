@@ -161,14 +161,14 @@ public class Tela extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         if(vP() == false && vNull() == false){//essa condição só funciona quando todos elementos estao preenchidos
-            l.interpolarPontos(Double.parseDouble(P.getText()), valorX());
+            l.interpolarPontos(Double.parseDouble(P.getText()), valorX(), valoresDaFuncao());
             String resultadoP = String.format("%.4f", l.getResultado());
             Resultado.setText(String.valueOf(resultadoP));
-            double aux[] = l.getValoresDaFuncao();
-            for(int i = 0;i < aux.length;i++){
+            //double aux[] = l.getValoresDaFuncao();
+            /*for(int i = 0;i < aux.length;i++){
                 String resultado = String.format("%.4f", aux[i]);
                 Tabela.setValueAt(resultado,1,i);
-            }
+            }*/
             l = new Lagrange();
             x = 0;
         }else{
@@ -202,6 +202,7 @@ public class Tela extends javax.swing.JFrame {
         return v;
     }
     Object[] dados;
+    Object[] dados2;
     public Double[] valorX(){
         Double[] aux = new Double[x];
         dados = new Object[x];
@@ -212,6 +213,19 @@ public class Tela extends javax.swing.JFrame {
         }
         for(int i = 0;i < x; i++){
             aux[i] = Double.parseDouble(dados[i].toString());
+        }
+        return aux;
+    }
+    public Double[] valoresDaFuncao(){
+        Double[] aux = new Double[x];
+        dados2 = new Object[x];
+        for(int i = 0;i < 5; i++){
+            if(Tabela.getValueAt(1, i) != null){
+                dados2[i] = Tabela.getValueAt(1,i);
+            }
+        }
+        for(int i = 0;i < x; i++){
+            aux[i] = Double.parseDouble(dados2[i].toString());
         }
         return aux;
     }

@@ -3,40 +3,41 @@ package br.com.unifil.lagrange.controller;
 public class Lagrange {
 
     private double resultado = 0.0;
-    private double[] valoresDaFuncao;
+//    private double[] valoresDaFuncao;
 
-    public void interpolarPontos(double x, Double[] numeros) {
-        double[] valoresDoX = new double[numeros.length];
+    public void interpolarPontos(double x, Double[] numeros, Double[] valoresDaFuncao) {
+        Double[] valoresDoX = new Double[numeros.length];
         adicionarElementosNoArray(valoresDoX, numeros);
-        valoresDaFuncao = calcularFuncaoDoValorX(valoresDoX);
+//        valoresDaFuncao = calcularFuncaoDoValorX(valoresDoX);
 
-        double[] valoresDeL = retornarResultadoL(x, valoresDoX);
+        Double[] valoresDeL = retornarResultadoL(x, valoresDoX);
         imprimirLista(valoresDoX, "VALORES_X");
         imprimirLista(valoresDaFuncao, "VALORES_FUNCAO");
 
         for (int i = 0; i < valoresDeL.length; i++) {
             resultado += (valoresDeL[i] * valoresDaFuncao[i]);
         }
-        //System.out.println("Resultado: " + getResultado());
+
+        System.out.println("Resultado: " + getResultado());
     }
 
-    private double[] calcularFuncaoDoValorX(double... valores) {
+    /*private double[] calcularFuncaoDoValorX(double... valores) {
         double e = Math.E;
         double[] resultadoDaFuncao = new double[valores.length];
         for (int i = 0; i < valores.length; i++) {
             resultadoDaFuncao[i] = Math.pow(e, (2 * valores[i]));
         }
         return resultadoDaFuncao;
-    }
+    }*/
 
-    private void adicionarElementosNoArray(double[] arrayACarregar, Double[] arrayCarregado) {
+    private void adicionarElementosNoArray(Double[] arrayACarregar, Double[] arrayCarregado) {
         for (int i = 0; i < arrayCarregado.length; i++) {
             arrayACarregar[i] = arrayCarregado[i];
         }
     }
 
-    private double[] retornarResultadoL(double x, double... numeros) {
-        double[] array = new double[numeros.length];
+    private Double[] retornarResultadoL(double x, Double... numeros) {
+        Double[] array = new Double[numeros.length];
         for (int i = 0; i < numeros.length; i++) {
             double L = 1.0;
             for (int j = 0; j < numeros.length; j++) {
@@ -53,11 +54,11 @@ public class Lagrange {
         return resultado;
     }
 
-    public double[] getValoresDaFuncao() {
+    /*public double[] getValoresDaFuncao() {
         return valoresDaFuncao;
-    }
+    }*/
 
-    private void imprimirLista(double[] lista, String nomeDaLista) {
+    private void imprimirLista(Double[] lista, String nomeDaLista) {
         for (int i = 0; i < lista.length; i++) {
             if (i == 0 && nomeDaLista.toUpperCase().equals("VALORES_X")) {
                 for (int j = 0; j < lista.length; j++) {
