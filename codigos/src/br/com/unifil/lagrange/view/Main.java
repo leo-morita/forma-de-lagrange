@@ -1,6 +1,6 @@
 package br.com.unifil.lagrange.view;
 
-import br.com.unifil.lagrange.controller.Lagrange;
+import br.com.unifil.lagrange.controller.FormaDeLagrange;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class Main {
         System.out.print("Valor do x que vai ser calculado na função: ");
         double x = teclado.nextDouble(); teclado.nextLine();
 
-        Lagrange lagrange = new Lagrange();
+        FormaDeLagrange lagrange = new FormaDeLagrange();
 
         Double[] arrayDosValoresX = new Double[valoresDeX.size()];
         for (int i = 0; i < valoresDeX.size(); i++) {

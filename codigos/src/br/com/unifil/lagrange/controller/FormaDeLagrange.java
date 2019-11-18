@@ -1,6 +1,6 @@
 package br.com.unifil.lagrange.controller;
 
-public class Lagrange {
+public class FormaDeLagrange {
 
     private double resultado = 0.0;
     private double[] valoresDaFuncao;

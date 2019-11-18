@@ -5,7 +5,7 @@
  */
 package br.com.unifil.lagrange.view;
 
-import br.com.unifil.lagrange.controller.Lagrange;
+import br.com.unifil.lagrange.controller.FormaDeLagrange;
 
 public class Tela extends javax.swing.JFrame {
 
@@ -155,7 +155,7 @@ public class Tela extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private Lagrange l = new Lagrange();
+    private FormaDeLagrange l = new FormaDeLagrange();
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -169,7 +169,7 @@ public class Tela extends javax.swing.JFrame {
                 String resultado = String.format("%.4f", aux[i]);
                 Tabela.setValueAt(resultado,1,i);
             }
-            l = new Lagrange();
+            l = new FormaDeLagrange();
             x = 0;
         }else{
             Resultado.setText("não preenchido");
@@ -186,7 +186,7 @@ public class Tela extends javax.swing.JFrame {
         }
         P.setText(null);
         Resultado.setText(null);
-        l = new Lagrange();
+        l = new FormaDeLagrange();
         x = 0;
     }//GEN-LAST:event_jButton2ActionPerformed
 
