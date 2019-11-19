@@ -6,11 +6,14 @@ public class FormaDeNewton {
         Double[] resultadosOrdem = new Double[numerosDaFuncao.length-1];
         Double[] resutadosDeD = retornarResultadoD(valorDeX, numeros);
 
-
-
-        for (int i = 0; i < numerosDaFuncao.length-1; i++) {
-            resultado = (numerosDaFuncao[i+1] - numerosDaFuncao[i]) / (numeros[i+1] - numeros[i]);
-            resultadosOrdem[i] = resultado;
+        int contador = numerosDaFuncao.length-1;
+        while (contador >= 0) {
+            resultadosOrdem = new Double[numerosDaFuncao.length];
+            for (int i = 0; i < contador; i++) {
+                resultado = (numerosDaFuncao[i + 1] - numerosDaFuncao[i]) / (numeros[i + 1] - numeros[i]);
+                resultadosOrdem[i] = resultado;
+            }
+            contador--;
         }
 
 
