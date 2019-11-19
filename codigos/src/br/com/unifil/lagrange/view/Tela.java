@@ -168,13 +168,9 @@ public class Tela extends javax.swing.JFrame {
             /*for(int i = 0;i < aux.length;i++){
                 String resultado = String.format("%.4f", aux[i]);
                 Tabela.setValueAt(resultado,1,i);
-<<<<<<< HEAD
             }
             l = new FormaDeLagrange();
-=======
             }*/
-            l = new Lagrange();
->>>>>>> d50d885343f9bbc27e1c88076aefe978525fec8e
             x = 0;
         }else{
             Resultado.setText("não preenchido");
