@@ -5,7 +5,6 @@ public class FormaDeNewton {
 
         Double resultado;
         Double[] resultadosOrdem;
-//        Double[] resutadosDeD = retornarResultadoD(valorDeX, numeros);
 
         int contador = numerosDaFuncao.length;
         resultadosOrdem = new Double[numerosDaFuncao.length];
@@ -85,40 +84,24 @@ public class FormaDeNewton {
     private void calcularOrdem3(Double[] numeros, int contador, Double[] resultadosOrdem2, Double[] resultadosOrdem3) {
         Double resultado;
         for (int i = 0; i < contador-3; i++) {
-            resultado = (resultadosOrdem2[i + 1] - resultadosOrdem2[i] / (numeros[i + 3] - numeros[i]));
+            resultado = (resultadosOrdem2[i + 1] - resultadosOrdem2[i]) / (numeros[i + 3] - numeros[i]);
             resultadosOrdem3[i] = resultado;
         }
     }
     private void calcularOrdem4(Double[] numeros, int contador, Double[] resultadosOrdem3, Double[] resultadosOrdem4) {
         Double resultado;
         for (int i = 0; i < contador-4; i++) {
-            resultado = (resultadosOrdem3[i + 1] - resultadosOrdem3[i] / numeros[i + 4] - numeros[i]);
+            resultado = (resultadosOrdem3[i + 1] - resultadosOrdem3[i]) / (numeros[i + 4] - numeros[i]);
             resultadosOrdem4[i] = resultado;
         }
     }
-
+    String resultadoGlobal ="";
     private void imprimirP(double valorDeX, double p) {
-        System.out.printf("P(%.4f) = %.4f", valorDeX, p);
+        resultadoGlobal = String.format("%.4f", p);
+    }
+    
+    public String getResultado() {
+        return resultadoGlobal;
     }
 
-    /*public Double[] retornarResultadoD(double valorDeX, Double... numeros) {
-        Double[] arrayRetorno = new Double[numeros.length];
-
-        for (int i = 0; i < numeros.length; i++) {
-            Double D = 1.0;
-            if (i == 0) {
-                arrayRetorno[i] = 1.0;
-            }
-            for (int j = 0; j < i; j++) {
-                D *= (valorDeX + numeros[j]);
-            }
-
-            if (i != 0) {
-                arrayRetorno[i] = D;
-            }
-
-        }
-
-        return arrayRetorno;
-    }*/
 }
